@@ -43,3 +43,6 @@ if (isset($_POST["studentLogin"])) {
         header("Location: login.php?error=invalidEmail");
     }
 }
+
+//close connection
+$con->close();
