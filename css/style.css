@@ -24,6 +24,7 @@ header{
     font-size: 18px;
     width: 100px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .system-name{
@@ -40,12 +41,21 @@ header{
     padding-left: 20px;
     padding-right: 20px;
 }
-
+.login{
+    color: #121212;
+}
 
 .form-container{
     margin: auto;
     max-width: 400px;
     max-height: 600px;
+    margin-bottom: 40px;
+}
+
+.error{
+    color: #f44336;
+    margin: 10px;
+    text-align: center;
 }
 
 form{
@@ -90,6 +100,7 @@ label{
 
 
 footer{
+   
     background-color: #121212;
     bottom:0;
     position: absolute;

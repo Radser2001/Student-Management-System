@@ -15,7 +15,16 @@
     ?>
 
     <div class="form-container">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form action="checkLogin.php" method="POST">
+            <h1 class="login">Log in</h1>
+            <?php
+            if (isset($_GET["error"]) && $_GET["error"] == "incorrectPassword") {
+                echo "<p class='error'>Incorrect Password. Please try again</p>";
+            }
+            if (isset($_GET["error"]) && $_GET["error"] == "invalidEmail") {
+                echo "<p class='error'>Invalid Email. Please try again.</p>";
+            }
+            ?>
             <label for="email">Email: </label>
             <input type="text" name="email">
             <label for="password">Password: </label>
