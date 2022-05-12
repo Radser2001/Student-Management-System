@@ -1,10 +1,10 @@
 ## Student-Management-System
 
-<p>Created using PHP, MySql, HTML and CSS</p>
+<h4>Created using PHP, MySql, HTML and CSS</h4>
 
 <br>
 
-#### Admin
+### Admin
 
 <li>Log in</li>
 
@@ -27,7 +27,8 @@
 ![Alt text](/Screenshots/deleteStudents.png)
 
 <br>
-#### Student
+
+### Student
 
 <li>Log in</li>
 
