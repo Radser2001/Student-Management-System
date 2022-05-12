@@ -46,7 +46,7 @@ session_start();
     </div>
 
     <div class="footer">
-        <p class="footer-text">Copyright &copy; 2022 by Rader2001</p>
+        <p class="footer-text">Copyright &copy; 2022 by Radser2001</p>
     </div>
 </body>
 
