@@ -1,6 +1,6 @@
 ## Student-Management-System
 
-<h4>Created using PHP, MySql, HTML and CSS</h4>
+<h4>Created using PHP, MySQL, HTML and CSS</h4>
 
 <br>
 
