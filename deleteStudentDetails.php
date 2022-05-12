@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'config/config.php';
 ?>
 
@@ -9,21 +10,13 @@ include 'config/config.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/adminDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css//deleteStudents.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Admin</title>
 </head>
 
 <body>
-    <!--header-->
-    <header>
-        <nav class="navbar-admin">
-            <div class="name">
-                <h2>Student-Management-System</h2>
-            </div>
-            <button class="button"><a href="logout.php">Log Out</a></button>
-        </nav>
-    </header>
     <div class="table-container">
         <table>
             <tr>
@@ -33,9 +26,10 @@ include 'config/config.php';
                 <th>Address </th>
                 <th>Email </th>
                 <th>Photo</th>
+                <th>Delete</th>
             </tr>
             <?php
-            
+            // include 'include/header.php';
 
             $sql = "SELECT * FROM Student";
             $result = $con->query($sql);
@@ -48,6 +42,8 @@ include 'config/config.php';
                     $dob = $row['studentDOB'];
                     $email = $row['studentEmail'];
                     $src = $row['studentImgPath'];
+                    $sid = $row['studentID'];
+                    $_SESSION['Asid'] = $sid;
                     echo "<tr>";
                     echo "    <td>$name</td>";
                     echo "    <td>$age</td>";
@@ -55,6 +51,7 @@ include 'config/config.php';
                     echo "    <td>$dob</td>";
                     echo "    <td>$email</td>";
                     echo "    <td><img class='stdImg' src= " . $src . "></td>";
+                    echo '    <td><button type="submit" name="deleteBtn"><a href="validateDeleteStudents.php?id=' . $sid . '"><i class="fa-solid fa-trash"></i></a></button></td>';
                     echo "</tr>";
                 }
             }
@@ -63,23 +60,7 @@ include 'config/config.php';
 
 
         </table>
-
-
-
-
-        <div class="button-container">
-            <button class="button"><a href="addStudentDetails.php">Add</a></button>
-            <button class="button"> <a href="editStudentDetails.php">Edit</a> </button>
-            <button class="button"><a href="deleteStudentDetails.php">Delete</a></button>
-        </div>
-
     </div>
-
-    <!--footer-->
-    <div class="footer">
-        <p class="footer-text">Copyright &copy; 2022 by Radser2001</p>
-    </div>
-
 </body>
 
 </html>
