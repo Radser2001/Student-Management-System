@@ -26,10 +26,8 @@
                 echo "<p class='error'>Invalid Email. Please try again.</p>";
             }
             ?>
-            <label for="email">Email: </label>
-            <input type="text" name="email">
-            <label for="password">Password: </label>
-            <input type="password" name="password">
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" maxlength="20">
             <div class="btn-row">
                 <input type="submit" name="studentLogin" class="button" value="Student">
                 <input type="submit" name="adminLogin" class="button" value="Admin">
