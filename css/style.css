@@ -8,7 +8,11 @@ body{
     margin: 0;
     padding: 0;
     min-height: 100%;
-    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
 header{
@@ -41,6 +45,7 @@ header{
     padding-left: 20px;
     padding-right: 20px;
 }
+
 .login{
     color: #121212;
 }
@@ -98,6 +103,41 @@ label{
     margin-bottom: 20px;
 }
 
+/*--------------------Student Profile---------------------------*/
+
+.student-details{
+    margin: auto;
+    max-width: 400px;
+    max-height: 600px;
+    margin-bottom: 40px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 50px;
+}
+
+.avatar{
+    height: 225px;
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+
+}
+
+span{
+    font-weight: normal;
+    padding-left: 10px;
+}
+
+.student-details p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.button-container{
+    text-align: center;
+}
 
 footer{
    
@@ -107,13 +147,22 @@ footer{
     width: 100%;
     text-align: center;
     color: #fdfdfd;
-    font-size: 18px;;
+    font-size: 18px;
+    
 }
 
 
 @media screen and (max-width: 700px){
     .system-name{
         font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .student-details {
+       
+        max-width: 300px;
+        
     }
 }
 
@@ -135,6 +184,13 @@ footer{
     }
 }
 
+@media screen and (max-width: 550px) {
+    .student-details {
+
+        max-width: 250px;
+
+    }
+}
 
 @media screen and (max-width: 390px) {
     .system-name {
@@ -151,6 +207,20 @@ footer{
         width: 200px;
         padding: 4px;
         font-size: 14px;
+    }
+
+    .student-details {
+
+        max-width: 200px;
+
+    }
+
+    .student-details p{
+        font-size: 16px;
+    }
+
+    span{
+        padding-left: 6px;
     }
 }
 
