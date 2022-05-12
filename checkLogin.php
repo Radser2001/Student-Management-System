@@ -34,7 +34,17 @@ if (isset($_POST["studentLogin"])) {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             if ($password == $row["studentPassword"]) {
-                header("Location: studentProfile.php");
+
+                $_SESSION['sid'] = $row['studentID'];
+                $_SESSION['sname'] = $row['studentName'];
+                $_SESSION['sage'] = $row['studentAge'];
+                $_SESSION['saddress'] = $row['studentAddress'];
+                $_SESSION['simage'] = $row['studentImgPath'];
+                $_SESSION['sdob'] = $row['studentDOB'];
+                $_SESSION['semail'] = $row['studentEmail'];
+                $_SESSION['spassword'] = $row['studentPassword'];
+
+                header("Location: studentProfile.php?sid=" . $_SESSION['sid'] . "");
             } else {
                 header("Location: login.php?error=incorrectPassword");
             }
@@ -43,3 +53,6 @@ if (isset($_POST["studentLogin"])) {
         header("Location: login.php?error=invalidEmail");
     }
 }
+
+//close connection
+$con->close();
